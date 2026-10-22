@@ -163,6 +163,95 @@
             color: var(--primary);
         }
 
+        /* Insurance Resources Section */
+        .insurance-resources-section {
+            background: #f5f8fc;
+        }
+
+        .resource-eyebrow {
+            display: inline-block;
+            color: #1981fc;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .resource-title {
+            color: #172b4d;
+            font-size: clamp(26px, 3vw, 36px);
+            font-weight: 700;
+        }
+
+        .resource-subtitle {
+            max-width: 650px;
+            margin: 12px auto 0;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .resource-card {
+            padding: 28px;
+            background: #fff;
+            border: 1px solid #e5edf7;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(31, 90, 166, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(31, 90, 166, 0.12);
+        }
+
+        .resource-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            margin-bottom: 20px;
+            background: #eaf4ff;
+            border-radius: 14px;
+            font-size: 26px;
+        }
+
+        .resource-card h5 {
+            margin-bottom: 12px;
+            color: #1f2937;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .resource-card p {
+            min-height: 72px;
+            margin-bottom: 22px;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 44px;
+            padding: 10px 16px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 575.98px) {
+            .resource-card {
+                padding: 22px;
+            }
+
+            .resource-card p {
+                min-height: auto;
+            }
+        }
+
         .video-section {
             background: var(--light);
         }
@@ -483,6 +572,170 @@
     </section>
 
 
+
+    <!-- Useful Insurance Resources Section -->
+<section class="insurance-resources-section py-5" id="insuranceResources">
+    <div class="container">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-5">
+            <span class="resource-eyebrow">USEFUL LINKS</span>
+            <h2 class="resource-title mt-2">Explore Insurance Resources</h2>
+            <p class="resource-subtitle">
+                Access useful insurance information, compare policies,
+                and explore trusted resources.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Resource Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="resource-card h-100">
+                    <div class="resource-icon">🚗</div>
+                    <h5>Motor Insurance</h5>
+                    <p>
+                        Learn about vehicle insurance, coverage options,
+                        and policy requirements.
+                    </p>
+
+                    <a
+                        href="https://www.policyholder.gov.in/"
+                        id="btn-motor-insurance"
+                        class="btn btn-outline-primary resource-btn outbound-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-category="motor-insurance"
+                        data-destination="policyholder-portal">
+                        Explore Motor Resources
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resource Card 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="resource-card h-100">
+                    <div class="resource-icon">🏥</div>
+                    <h5>Health Insurance</h5>
+                    <p>
+                        Understand health coverage, waiting periods,
+                        exclusions, and policy benefits.
+                    </p>
+
+                    <a
+                        href="https://www.nivabupa.com/"
+                        id="btn-health-insurance"
+                        class="btn btn-outline-primary resource-btn outbound-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-category="health-insurance"
+                        data-destination="nivabupa">
+                        Explore Health Plans
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resource Card 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="resource-card h-100">
+                    <div class="resource-icon">🛡️</div>
+                    <h5>Term Insurance</h5>
+                    <p>
+                        Learn how life cover works and what to consider
+                        when choosing term insurance.
+                    </p>
+
+                    <a
+                        href="https://www.licindia.in/"
+                        id="btn-term-insurance"
+                        class="btn btn-outline-primary resource-btn outbound-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-category="term-insurance"
+                        data-destination="lic">
+                        Visit LIC Website
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resource Card 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="resource-card h-100">
+                    <div class="resource-icon">📋</div>
+                    <h5>Insurance Regulator</h5>
+                    <p>
+                        Visit the official regulator's website for
+                        insurance-related information and updates.
+                    </p>
+
+                    <a
+                        href="https://irdai.gov.in/"
+                        id="btn-irdai"
+                        class="btn btn-outline-primary resource-btn outbound-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-category="regulatory-resource"
+                        data-destination="irdai">
+                        Visit IRDAI
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resource Card 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="resource-card h-100">
+                    <div class="resource-icon">📚</div>
+                    <h5>Policyholder Education</h5>
+                    <p>
+                        Explore educational material about insurance
+                        awareness and policyholder rights.
+                    </p>
+
+                    <a
+                        href="https://www.policyholder.gov.in/"
+                        id="btn-policyholder-guide"
+                        class="btn btn-outline-primary resource-btn outbound-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-category="insurance-education"
+                        data-destination="policyholder-portal">
+                        Read Insurance Guides
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resource Card 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="resource-card h-100">
+                    <div class="resource-icon">🌐</div>
+                    <h5>Explore PolicyBoss</h5>
+                    <p>
+                        Visit PolicyBoss to explore insurance products
+                        and available services.
+                    </p>
+
+                    <a
+                        href="https://www.policyboss.com/"
+                        id="btn-policyboss"
+                        class="btn btn-primary resource-btn outbound-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-category="insurance-services"
+                        data-destination="policyboss">
+                        Visit PolicyBoss
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
 
