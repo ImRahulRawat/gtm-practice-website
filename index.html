@@ -1,22 +1,1036 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Insurance Learning Hub | PolicyMart</title>
+    <meta name="description" content="Learn the basics of motor, health and term insurance with our interactive insurance learning hub.">
+
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MPB9PHKQ');</script>
+    })(window,document,'script','dataLayer','GTM-MPB9PHKQ');
+    </script>
     <!-- End Google Tag Manager -->
+
+    <!-- Bootstrap 5.0.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary: #1677e8;
+            --dark: #10243e;
+            --light: #f4f8fd;
+            --muted: #64748b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--dark);
+            background: #fff;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(15, 35, 65, .07);
+        }
+
+        .navbar-brand {
+            color: var(--primary) !important;
+            font-size: 25px;
+            font-weight: 800;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #095fbd;
+            border-color: #095fbd;
+        }
+
+        .hero {
+            padding: 95px 0;
+            background: linear-gradient(125deg, #edf6ff, #fff 65%);
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            font-weight: 800;
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .hero-visual {
+            background: linear-gradient(145deg, #dceeff, #f4f9ff);
+            border-radius: 25px;
+            padding: 35px;
+        }
+
+        .hero-icon {
+            font-size: 90px;
+            color: var(--primary);
+        }
+
+        .section-padding {
+            padding: 75px 0;
+        }
+
+        .section-label {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title {
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .section-description {
+            color: var(--muted);
+        }
+
+        .insurance-card {
+            border: 1px solid #e8eef5;
+            border-radius: 18px;
+            height: 100%;
+            transition: .25s ease;
+        }
+
+        .insurance-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(16, 36, 62, .09);
+        }
+
+        .insurance-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: #eaf4ff;
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 22px;
+        }
+
+        .insurance-card p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .learn-more {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .video-section {
+            background: var(--light);
+        }
+
+        .video-card {
+            background: white;
+            border: 1px solid #e5edf6;
+            border-radius: 17px;
+            overflow: hidden;
+            height: 100%;
+            transition: .25s;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 12px 28px rgba(16, 36, 62, .10);
+            transform: translateY(-4px);
+        }
+
+        .video-thumb {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            background: #eaf2fb;
+        }
+
+        .video-thumb img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            transition: .3s;
+        }
+
+        .video-thumb:hover img {
+            transform: scale(1.04);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            background: rgba(22, 119, 232, .95);
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+        }
+
+        .video-card h5 {
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .video-category {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            background: #eaf4ff;
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+
+        .quiz-box, .lead-box {
+            border: 1px solid #e5edf6;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(16, 36, 62, .04);
+        }
+
+        .quiz-option {
+            border: 1px solid #dce5ef;
+            border-radius: 10px;
+            padding: 13px 15px;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 10px;
+            transition: .2s;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: #f3f8ff;
+        }
+
+        .quiz-option input {
+            margin-right: 8px;
+        }
+
+        .quiz-result {
+            display: none;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .form-control, .form-select {
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 .2rem rgba(22, 119, 232, .12);
+        }
+
+        .tracking-note {
+            background: #eaf4ff;
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #10243e;
+            color: #d9e5f5;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .section-padding {
+                padding: 55px 0;
+            }
+
+            .hero-visual {
+                margin-top: 35px;
+            }
+
+            .quiz-box, .lead-box {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>GTM MANAGER</h1>
+
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPB9PHKQ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPB9PHKQ"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home" data-track="logo">
+                <i class="bi bi-shield-check"></i> PolicyMart
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#insurance">Insurance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary rounded-pill px-4"
+                           href="#contact" data-track="navbar_cta">
+                            Get a Callback
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    <span class="badge rounded-pill bg-white text-primary border px-3 py-2 mb-3">
+                        YOUR INSURANCE LEARNING HUB
+                    </span>
+
+                    <h1>Understand Insurance.<br>
+                        <span>Protect What Matters.</span>
+                    </h1>
+
+                    <p class="mt-4 mb-4">
+                        Explore simple insurance guides, watch educational
+                        videos and test your knowledge. Learn the basics
+                        before making an informed insurance decision.
+                    </p>
+
+                    <a href="#insurance" class="btn btn-primary btn-lg rounded-pill px-4"
+                       data-track="hero_explore">
+                        Explore Insurance <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+
+                    <a href="#videos" class="btn btn-outline-primary btn-lg rounded-pill px-4 ms-2 mt-2 mt-sm-0"
+                       data-track="hero_videos">
+                        Watch Videos
+                    </a>
+
+                    <div class="d-flex flex-wrap gap-4 mt-4 text-secondary small">
+                        <span><i class="bi bi-check-circle-fill text-primary me-1"></i> Simple guides</span>
+                        <span><i class="bi bi-play-circle-fill text-primary me-1"></i> Video learning</span>
+                        <span><i class="bi bi-patch-question-fill text-primary me-1"></i> Interactive quiz</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-visual text-center">
+                        <i class="bi bi-shield-lock hero-icon"></i>
+                        <h3 class="fw-bold mt-3">Make informed choices</h3>
+                        <p class="text-secondary mb-0">
+                            Understand coverage, exclusions, premiums
+                            and policy terms in simple language.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- INSURANCE EDUCATION -->
+    <section class="section-padding" id="insurance">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label">Learn the basics</span>
+                <h2 class="section-title">Explore Insurance Types</h2>
+                <p class="section-description">
+                    Start with the insurance that matters to your needs.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="insurance-card p-4">
+                        <div class="insurance-icon">
+                            <i class="bi bi-car-front-fill"></i>
+                        </div>
+                        <h4 class="fw-bold">Motor Insurance</h4>
+                        <p>
+                            Learn about third-party cover, own-damage cover,
+                            comprehensive policies and no-claim bonus.
+                        </p>
+                        <a href="#videos" class="learn-more"
+                           data-track="motor_learn_more">
+                            Learn more <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="insurance-card p-4">
+                        <div class="insurance-icon">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                        </div>
+                        <h4 class="fw-bold">Health Insurance</h4>
+                        <p>
+                            Understand sum insured, waiting periods,
+                            cashless treatment, deductibles and exclusions.
+                        </p>
+                        <a href="#videos" class="learn-more"
+                           data-track="health_learn_more">
+                            Learn more <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="insurance-card p-4">
+                        <div class="insurance-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h4 class="fw-bold">Term Insurance</h4>
+                        <p>
+                            Learn how life cover can provide financial
+                            protection to your family, subject to policy terms.
+                        </p>
+                        <a href="#videos" class="learn-more"
+                           data-track="term_learn_more">
+                            Learn more <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<!-- INSURANCE INFORMATION SECTION -->
+<section class="section-padding video-section" id="insurance-guide">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="section-label">Insurance Knowledge</span>
+            <h2 class="section-title">Everything You Need to Know About Insurance</h2>
+            <p class="section-description mx-auto" style="max-width: 720px;">
+                Understand different types of insurance, explore essential
+                policy features and learn how to make informed coverage decisions.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Motor Insurance -->
+            <div class="col-md-6 col-lg-4">
+                <div class="video-card p-4">
+                    <div class="insurance-icon">
+                        <i class="bi bi-car-front-fill"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Motor Insurance</h4>
+
+                    <p class="text-secondary">
+                        Motor insurance helps protect vehicle owners against
+                        covered financial losses arising from accidents,
+                        damage and third-party liabilities.
+                    </p>
+
+                    <hr>
+
+                    <h6 class="fw-bold">Types of Motor Insurance</h6>
+                    <ul class="text-secondary small ps-3">
+                        <li class="mb-2">
+                            <strong>Third-Party Insurance:</strong>
+                            Covers eligible third-party liabilities as specified
+                            under the policy.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Own-Damage Insurance:</strong>
+                            Covers specified damage to your own vehicle,
+                            subject to policy terms.
+                        </li>
+                        <li>
+                            <strong>Comprehensive Insurance:</strong>
+                            Combines third-party liability cover with own-damage
+                            cover, subject to the policy wording.
+                        </li>
+                    </ul>
+
+                    <div class="tracking-note mt-3">
+                        <strong>Useful tip:</strong> Review deductibles,
+                        exclusions, add-ons and the insured declared value (IDV)
+                        before purchasing a policy.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Insurance -->
+            <div class="col-md-6 col-lg-4">
+                <div class="video-card p-4">
+                    <div class="insurance-icon">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Health Insurance</h4>
+
+                    <p class="text-secondary">
+                        Health insurance can help manage eligible medical
+                        expenses and reduce the financial burden of covered
+                        hospitalisation and treatment.
+                    </p>
+
+                    <hr>
+
+                    <h6 class="fw-bold">Key Features to Understand</h6>
+                    <ul class="text-secondary small ps-3">
+                        <li class="mb-2">
+                            <strong>Sum Insured:</strong>
+                            The coverage limit available under the policy,
+                            subject to its conditions.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Waiting Period:</strong>
+                            A specified period before certain benefits become
+                            available.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Cashless Treatment:</strong>
+                            Eligible treatment at a network hospital under
+                            the insurer's applicable process.
+                        </li>
+                        <li>
+                            <strong>Pre-existing Conditions:</strong>
+                            Check applicable waiting periods, disclosures
+                            and coverage conditions.
+                        </li>
+                    </ul>
+
+                    <div class="tracking-note mt-3">
+                        <strong>Useful tip:</strong> Compare hospital networks,
+                        room-rent limits, co-payments and exclusions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Term Insurance -->
+            <div class="col-md-6 col-lg-4">
+                <div class="video-card p-4">
+                    <div class="insurance-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                    <h4 class="fw-bold mb-3">Term Insurance</h4>
+
+                    <p class="text-secondary">
+                        Term life insurance provides financial protection
+                        to beneficiaries if the insured person dies during
+                        the covered policy term, subject to policy conditions.
+                    </p>
+
+                    <hr>
+
+                    <h6 class="fw-bold">Important Considerations</h6>
+                    <ul class="text-secondary small ps-3">
+                        <li class="mb-2">
+                            <strong>Life Cover:</strong>
+                            Choose coverage after considering family expenses,
+                            liabilities and future financial needs.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Policy Term:</strong>
+                            Consider how long your dependants may need
+                            financial protection.
+                        </li>
+                        <li class="mb-2">
+                            <strong>Premium:</strong>
+                            Understand the premium amount, payment frequency
+                            and applicable conditions.
+                        </li>
+                        <li>
+                            <strong>Disclosure:</strong>
+                            Provide accurate information about health,
+                            occupation and lifestyle.
+                        </li>
+                    </ul>
+
+                    <div class="tracking-note mt-3">
+                        <strong>Useful tip:</strong> Review exclusions,
+                        claim conditions and beneficiary details carefully.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- POLICY BUYING CHECKLIST -->
+        <div class="mt-5 bg-white border rounded-4 p-4 p-md-5">
+            <div class="row align-items-center g-4">
+
+                <div class="col-lg-5">
+                    <span class="section-label">Before you buy</span>
+                    <h3 class="section-title">Choose Your Insurance Wisely</h3>
+                    <p class="section-description mb-0">
+                        A few important checks can help you understand
+                        your coverage and avoid surprises at claim time.
+                    </p>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="d-flex gap-3 mb-3">
+                        <i class="bi bi-check-circle-fill text-primary fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Compare Coverage</h6>
+                            <p class="small text-secondary mb-0">
+                                Look beyond the premium and compare benefits,
+                                limits and exclusions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-3">
+                        <i class="bi bi-check-circle-fill text-primary fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Read Policy Wording</h6>
+                            <p class="small text-secondary mb-0">
+                                Understand waiting periods, deductibles,
+                                conditions and claim requirements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-check-circle-fill text-primary fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold mb-1">Review Your Needs</h6>
+                            <p class="small text-secondary mb-0">
+                                Select coverage based on your circumstances,
+                                responsibilities and financial priorities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="text-secondary small text-center mt-4 mb-0">
+            Insurance coverage, benefits and exclusions vary by policy.
+            Please refer to the applicable policy wording and insurer
+            documentation for complete details.
+        </p>
+
+    </div>
+</section>
+
+
+
+    <!-- VIDEO MODAL -->
+    <div class="modal fade" id="videoModal" tabindex="-1"
+         aria-labelledby="videoModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 overflow-hidden">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="videoModalTitle">
+                        Insurance Video
+                    </h5>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe id="videoFrame"
+                                src=""
+                                title="PolicyMart educational video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- INTERACTIVE QUIZ -->
+    <section class="section-padding" id="quiz">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-4">
+                        <span class="section-label">Test your knowledge</span>
+                        <h2 class="section-title">Insurance Quick Quiz</h2>
+                        <p class="section-description">
+                            Answer the question and check your understanding.
+                        </p>
+                    </div>
+
+                    <div class="quiz-box">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="badge bg-primary">Question 1 of 1</span>
+                            <span class="text-secondary small">Beginner</span>
+                        </div>
+
+                        <h5 class="fw-bold mb-4">
+                            Which type of insurance primarily helps cover
+                            eligible medical expenses?
+                        </h5>
+
+                        <form id="quizForm">
+                            <label class="quiz-option">
+                                <input type="radio" name="quizAnswer"
+                                       value="motor" required>
+                                Motor Insurance
+                            </label>
+
+                            <label class="quiz-option">
+                                <input type="radio" name="quizAnswer"
+                                       value="health">
+                                Health Insurance
+                            </label>
+
+                            <label class="quiz-option">
+                                <input type="radio" name="quizAnswer"
+                                       value="term">
+                                Term Insurance
+                            </label>
+
+                            <button type="submit"
+                                    class="btn btn-primary rounded-pill px-4 mt-3"
+                                    data-track="quiz_submit">
+                                Check Answer
+                            </button>
+                        </form>
+
+                        <div class="quiz-result" id="quizResult"
+                             role="status" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- LEAD FORM -->
+    <section class="section-padding video-section" id="contact">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-5">
+                    <span class="section-label">Have questions?</span>
+                    <h2 class="section-title">Learn More About Insurance</h2>
+                    <p class="section-description mt-3">
+                        Use this demo form to practise tracking form
+                        submissions in Google Tag Manager.
+                    </p>
+
+                    <div class="tracking-note mt-4">
+                        <i class="bi bi-info-circle-fill text-primary me-2"></i>
+                        <strong>Learning demo:</strong> This form does not
+                        send your information to a server. Use fictional
+                        details while testing.
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="lead-box bg-white">
+                        <h4 class="fw-bold mb-4">Request a Callback</h4>
+
+                        <form id="leadForm">
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">
+                                    Full Name
+                                </label>
+                                <input type="text" class="form-control"
+                                       id="fullName" name="fullName"
+                                       placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Email Address
+                                </label>
+                                <input type="email" class="form-control"
+                                       id="email" name="email"
+                                       placeholder="you@example.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="insuranceType" class="form-label">
+                                    Interested In
+                                </label>
+                                <select class="form-select" id="insuranceType"
+                                        name="insuranceType" required>
+                                    <option value="">Select insurance type</option>
+                                    <option value="motor">Motor Insurance</option>
+                                    <option value="health">Health Insurance</option>
+                                    <option value="term">Term Insurance</option>
+                                </select>
+                            </div>
+
+                            <button type="submit"
+                                    class="btn btn-primary rounded-pill w-100 py-3"
+                                    data-track="lead_form_submit">
+                                Submit Demo Form
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+
+                            <div id="formMessage" class="mt-3"
+                                 role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center gy-3">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-white">
+                        <i class="bi bi-shield-check"></i> PolicyMart
+                    </h5>
+                    <p class="small mb-0">
+                        An educational demo website for learning GTM.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#home" data-track="footer_back_to_top">
+                        Back to top <i class="bi bi-arrow-up"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <p class="small mb-0">
+                This is a learning project, not an official PolicyMart
+                sales or lead-generation page. Insurance information is
+                general education only. Review the relevant policy wording,
+                exclusions and conditions before purchasing insurance.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Helper: send custom events to Google Tag Manager.
+        // These events can be used as Custom Event triggers in GTM.
+        function trackEvent(eventName, parameters = {}) {
+            window.dataLayer = window.dataLayer || [];
+
+            window.dataLayer.push({
+                event: eventName,
+                ...parameters
+            });
+
+            console.log("GTM event:", eventName, parameters);
+        }
+
+
+        // 1. Track clicks on elements marked with data-track.
+        document.querySelectorAll("[data-track]").forEach(function(element) {
+            element.addEventListener("click", function() {
+                trackEvent("demo_click", {
+                    click_element: element.dataset.track,
+                    click_text: element.innerText.trim().slice(0, 80)
+                });
+            });
+        });
+
+
+        // 2. Track video clicks and open the video modal.
+        const videoModalElement = document.getElementById("videoModal");
+        const videoModal = new bootstrap.Modal(videoModalElement);
+        const videoFrame = document.getElementById("videoFrame");
+        const videoModalTitle = document.getElementById("videoModalTitle");
+
+        function openVideo(element) {
+            const videoId = element.dataset.videoId;
+            const videoTitle = element.dataset.videoTitle;
+
+            videoModalTitle.textContent = videoTitle;
+
+            videoFrame.src =
+                "https://www.youtube-nocookie.com/embed/" +
+                encodeURIComponent(videoId) + "?autoplay=1";
+
+            trackEvent("video_open", {
+                video_id: videoId,
+                video_title: videoTitle
+            });
+
+            videoModal.show();
+        }
+
+        document.querySelectorAll(".video-thumb").forEach(function(element) {
+            element.addEventListener("click", function() {
+                openVideo(element);
+            });
+
+            element.addEventListener("keydown", function(event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openVideo(element);
+                }
+            });
+        });
+
+        // Stop playback when the modal closes.
+        videoModalElement.addEventListener("hidden.bs.modal", function() {
+            videoFrame.src = "";
+        });
+
+
+        // 3. Track quiz interaction.
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const selected = document.querySelector(
+                'input[name="quizAnswer"]:checked'
+            );
+
+            if (!selected) return;
+
+            const correct = selected.value === "health";
+            const result = document.getElementById("quizResult");
+
+            result.style.display = "block";
+            result.className = "quiz-result " +
+                (correct ? "bg-success text-white" : "bg-warning text-dark");
+
+            result.textContent = correct
+                ? "Correct! Health insurance helps cover eligible medical expenses according to policy terms."
+                : "Not quite. Health insurance is designed to cover eligible medical expenses, subject to policy terms.";
+
+            trackEvent("quiz_answer", {
+                quiz_question: "insurance_type_for_medical_expenses",
+                selected_answer: selected.value,
+                is_correct: correct
+            });
+        });
+
+
+        // 4. Track demo lead-form submission.
+        document.getElementById("leadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+
+            const insuranceType = document.getElementById("insuranceType").value;
+            const message = document.getElementById("formMessage");
+
+            // Do not send names, emails or other personal details to GTM.
+            trackEvent("demo_form_submit", {
+                form_name: "insurance_callback_demo",
+                insurance_type: insuranceType
+            });
+
+            message.className = "mt-3 alert alert-success";
+            message.textContent =
+                "Demo submitted successfully! No data was sent to a server.";
+
+            this.reset();
+        });
+
+
+        // 5. Track which insurance category the user selects.
+        document.getElementById("insuranceType").addEventListener("change", function() {
+            trackEvent("insurance_interest_select", {
+                insurance_type: this.value
+            });
+        });
+    </script>
+
 </body>
 </html>
