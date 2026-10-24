@@ -1304,6 +1304,8 @@
 
 
         // 4. Track demo lead-form submission.
+
+
         document.getElementById("leadForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
@@ -1312,21 +1314,10 @@
                 return;
             }
 
-            const insuranceType = document.getElementById("insuranceType").value;
-            const message = document.getElementById("formMessage");
-
-            // Do not send names, emails or other personal details to GTM.
-            trackEvent("demo_form_submit", {
-                form_name: "insurance_callback_demo",
-                insurance_type: insuranceType
-            });
-
-            message.className = "mt-3 alert alert-success";
-            message.textContent =
-                "Demo submitted successfully! No data was sent to a server.";
-
-            this.reset();
+            window.location.href = "thankyou.html";
         });
+
+
 
 
         // 5. Track which insurance category the user selects.
